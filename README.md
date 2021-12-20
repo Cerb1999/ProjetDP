@@ -7,7 +7,7 @@ Dans un terminal :
 # On clone le dépôt...
 git clone https://github.com/Cerb1999/ProjetDP.git -b main
 # ...et on se déplace dans sa racine
-cd maze
+cd ProjetDP
 
 # `mvn package` exécute les actions suivantes :
 # - `validate` : validation du `pom.xml` et du projet
