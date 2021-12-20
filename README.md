@@ -28,7 +28,7 @@ set CATALINA_HOME="MY_APACHE_TOMCAT_FULLPATH"
 copy ProjetDP-1.0-SNAPSHOT.war %CATALINA_HOME%\webapps
 
 # pour linux : .sh et windows : .bat
-catalina.bat **start**
+catalina.bat run
 
 # par défaut : port 8080 (voir tomcat/conf/server.xml
 localhost:8081/ProjetDP-1.0-SNAPSHOT.war
