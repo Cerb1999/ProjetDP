@@ -9,6 +9,13 @@ git clone https://github.com/Cerb1999/ProjetDP.git -b main
 # ...et on se déplace dans sa racine
 cd ProjetDP
 
+# avant de créer le package : 
+cd src/main/resources
+# -> modifier fichier confBDD.properties avec BDD locale
+
+# retour à la racine
+cd ../../..
+
 # `mvn package` exécute les actions suivantes :
 # - `validate` : validation du `pom.xml` et du projet
 # - `compile` : compile les sources
