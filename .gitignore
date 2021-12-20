@@ -50,3 +50,6 @@ $RECYCLE.BIN/
 
 #spring
 .springBeans
+
+#conf
+/src/main/resources/confBDD.properties
