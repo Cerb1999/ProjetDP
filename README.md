@@ -11,7 +11,7 @@ cd ProjetDP
 
 # avant de créer le package : 
 cd src/main/resources
-# -> modifier fichier confBDD.properties avec BDD locale
+# -> modifier fichier application.properties avec BDD locale
 
 # retour à la racine
 cd ../../..
@@ -39,4 +39,16 @@ catalina.bat run
 
 # par défaut : port 8080 (voir tomcat/conf/server.xml
 localhost:8081/ProjetDP-1.0-SNAPSHOT.war
+
+# Sinon en mode dev : 
+Run / Debut configuration -> Nouvelle configuration (Spring boot ou Tomcat)
+# Si Springboot
+# [Configuration] -> Main class : com.projetdp.ProjetdpApplication
+# - on Update/ on Frame : Update classes and resources
+
+# Si tomcat
+# - [Deployment] -> + -> /ProjetDP_war_exploded
+# - [Server] -> http://localhost:[PORT]/ProjetDP_war_exploded/, spécifier HTTP port
+# - on Update/ on Frame : Update classes and resources
+
 ```
