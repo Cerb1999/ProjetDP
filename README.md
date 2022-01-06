@@ -46,6 +46,7 @@ Run / Debut configuration -> Nouvelle configuration (Spring boot ou Tomcat)
 #Si Springboot
 [Configuration] -> Main class : com.projetdp.ProjetdpApplication
 - on Update/ on Frame : Update classes and resources
+[Server] -> http://localhost:[PORT]/ProjetDP
 
 # Si tomcat
 - [Deployment] -> + -> /ProjetDP_war_exploded
