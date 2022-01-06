@@ -25,30 +25,31 @@ mvn package -P prod
 
 # Le .war se trouve maintenant dans `target/` si aucune erreur n'est survenue
 # dans l'étape précédente
-ProjetDP-1.0-SNAPSHOT.war
+ProjetDP.war
 
 # Si CATALINA_HOME n'est pas encore une variable d'environnement
 cd C:\MY_WAR_FILE_LOCATION
 set CATALINA_HOME="MY_APACHE_TOMCAT_FULLPATH"
 
 # transfert du .war dans tomcat/webapps
-copy ProjetDP-1.0-SNAPSHOT.war %CATALINA_HOME%\webapps
+copy ProjetDP.war %CATALINA_HOME%\webapps
 
 # pour linux : .sh et windows : .bat
 catalina.bat run
 
 # par défaut : port 8080 (voir tomcat/conf/server.xml
-localhost:[PORT]/ProjetDP-1.0-SNAPSHOT.war
+localhost:[PORT]/ProjetDP.war
 
 # Sinon en mode dev : 
 Run / Debut configuration -> Nouvelle configuration (Spring boot ou Tomcat)
 
+#Avec Intellij
 #Si Springboot
 [Configuration] -> Main class : com.projetdp.ProjetdpApplication
 - on Update/ on Frame : Update classes and resources
 [Server] -> http://localhost:[PORT]/ProjetDP
 
-# Si tomcat
+#Si tomcat
 - [Deployment] -> + -> /ProjetDP_war_exploded
 - [Server] -> http://localhost:[PORT]/ProjetDP_war_exploded/, spécifier HTTP port
 - on Update/ on Frame : Update classes and resources
