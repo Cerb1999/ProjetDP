@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com</groupId>
-    <artifactId>projetdp</artifactId>
+    <artifactId>ProjetDP</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>projetdp</name>
+    <name>ProjetDP</name>
     <packaging>war</packaging>
     <description>ProjetDP</description>
     <properties>
@@ -162,6 +162,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>-->
         </plugins>
+        <finalName>${project.artifactId}</finalName>
     </build>
 
 </project>
