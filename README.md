@@ -56,5 +56,8 @@ Run / Debut configuration -> Nouvelle configuration (Spring boot ou Tomcat)
 
 ```
 
-#### Diagramme de classe
+#### Diagramme de classe en SVG
 ![diagramme de classe svg](./doc/UML_Diagram_SVG.svg)
+
+#### Diagramme de classe en PNG
+![diagramme de classe png](./doc/UML_Diagram_PNG.png)
