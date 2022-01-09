@@ -25,12 +25,6 @@
     </div>
     <div class="d-grid gap-2">
         <div class="container text-center btn btn-outline-success mb-3">
-            <a th:class="text-black" href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
-            <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
-                <input hidden type="submit" value="Sign Out" />
-            </form>
-        </div>
-        <div class="container text-center btn btn-outline-success mb-3">
             <a class="text-black" th:href="@{/user/profile/show}">User Profile</a>
         </div>
         <div class="container text-center btn btn-outline-success mb-3">
@@ -44,6 +38,15 @@
         </div>
         <div class="container text-center btn btn-outline-success mb-3">
             <a class="text-black" th:href="@{/user/notification/list}">My notifications</a>
+        </div>
+        <div class="container text-center btn btn-outline-success mb-3">
+            <a th:href="@{/user/friend/list}">My friends list</a>
+        </div>
+        <div class="container text-center btn btn-outline-success mb-3">
+            <a th:class="text-black" href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
+            <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+                <input hidden type="submit" value="Sign Out" />
+            </form>
         </div>
     </div>
 
