@@ -69,6 +69,12 @@ public class NotificationService {
                 false,
                 unfriended,
                 sender));
+        notificationRepository.save(new Notification(
+                "you have removed " + sender.getUsername() + " from your friends list",
+                new Date(),
+                false,
+                sender,
+                unfriended));
     }
 
     public void addNotificationRefuse(long id) {
