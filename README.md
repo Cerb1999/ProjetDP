@@ -53,12 +53,19 @@ Run / Debut configuration -> Nouvelle configuration (Spring boot ou Tomcat)
 - on Update/ on Frame : Update classes and resources
 [Server] -> http://localhost:[PORT]/ProjetDP
 
-#Si tomcat
+#Si tomcat (war ou war_exploded)
 - [Deployment] -> + -> /ProjetDP_war_exploded
 - [Server] -> http://localhost:[PORT]/ProjetDP_war_exploded/, spécifier HTTP port
 - on Update/ on Frame : Update classes and resources
 
 ```
+
+### Informations complémentaires
+BDD 'dp' de base, créée si non existante
+
+Port 8085 de base (si spring boot)
+
+fichier de configuration spring : src/main/resources/application.properties
 
 #### Diagramme de classe en SVG
 ![diagramme de classe svg](./doc/UML_Diagram_SVG.svg)
