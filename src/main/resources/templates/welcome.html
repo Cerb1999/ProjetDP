@@ -40,10 +40,10 @@
             <a class="text-black" th:href="@{/user/notification/list}">My notifications</a>
         </div>
         <div class="container text-center btn btn-outline-success mb-3">
-            <a th:href="@{/user/friend/list}">My friends list</a>
+            <a class="text-black" th:href="@{/user/friend/list}">My friends list</a>
         </div>
         <div class="container text-center btn btn-outline-success mb-3">
-            <a href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
+            <a class="text-black" href="javascript: document.logoutForm.submit()">Sign out</a>
             <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
                 <input hidden type="submit" value="Sign Out" />
             </form>
