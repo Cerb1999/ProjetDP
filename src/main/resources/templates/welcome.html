@@ -25,25 +25,25 @@
     </div>
     <div class="d-grid gap-2">
         <div class="container text-center btn btn-outline-success mb-3">
-            <a href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
+            <a th:class="text-black" href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
             <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
                 <input hidden type="submit" value="Sign Out" />
             </form>
         </div>
         <div class="container text-center btn btn-outline-success mb-3">
-            <a th:href="@{/user/profile/show}">User Profile</a>
+            <a class="text-black" th:href="@{/user/profile/show}">User Profile</a>
         </div>
         <div class="container text-center btn btn-outline-success mb-3">
-            <a th:href="@{/user/list}">User List</a>
+            <a class="text-black" th:href="@{/user/list}">User List</a>
         </div>
         <div class="container text-center btn btn-outline-success mb-3">
-            <a th:href="@{/user/activity/add}">Add an activity</a>
+            <a class="text-black" th:href="@{/user/activity/add}">Add an activity</a>
         </div>
         <div class="container text-center btn btn-outline-success mb-3">
-            <a th:href="@{/user/activity/list}">My activities</a>
+            <a class="text-black" th:href="@{/user/activity/list}">My activities</a>
         </div>
         <div class="container text-center btn btn-outline-success mb-3">
-            <a th:href="@{/user/notification/list}">My notifications</a>
+            <a class="text-black" th:href="@{/user/notification/list}">My notifications</a>
         </div>
     </div>
 
@@ -51,13 +51,13 @@
     <div sec:authorize="hasAuthority('ADMIN')">
         <div class="d-grid gap-2">
             <div class="container text-center btn btn-outline-secondary mb-3">
-                <a th:href="@{/admin/activity/list}">List of all activities</a>
+                <a class="text-black" th:href="@{/admin/activity/list}">List of all activities</a>
             </div>
             <div class="container text-center btn btn-outline-secondary mb-3">
-                <a th:href="@{/admin/location/list}">List of all locations</a>
+                <a class="text-black" th:href="@{/admin/location/list}">List of all locations</a>
             </div>
             <div class="container text-center btn btn-outline-secondary mb-3">
-                <a th:href="@{/admin/user/list}">list of all users</a>
+                <a class="text-black" th:href="@{/admin/user/list}">list of all users</a>
             </div>
         </div>
     </div>

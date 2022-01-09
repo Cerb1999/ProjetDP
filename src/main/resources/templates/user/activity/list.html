@@ -32,20 +32,20 @@
         <td> Location address : </td>
         <td th:text="${activity.getLocation().getAddress()}"></td>
         <td>
-            <div class="form-group">
-                <a class="btn btn-primary" th:href="@{/user/activity/show(id=${activity.getId()})}">View</a>
+            <div class="form-group mb-3">
+                <a class="btn btn-success" th:href="@{/user/activity/show(id=${activity.getId()})}">View</a>
             </div>
         </td>
         <td th:class="'activity'+${activity.getId}">
         </td>
     </tr>
 </table>
-<div class="d-grid gap-2 col-6 mx-auto">
+<div class="d-grid gap-2 col-6 mx-auto mb-3">
     <div class="container-fluid text-center btn btn-success mb-3">
-        <a th:href="@{/user/activity/add}">Add an activity</a>
+        <a class="text-white" th:href="@{/user/activity/add}">Add an activity</a>
     </div>
     <div class="container-fluid text-center btn btn-success mb-3">
-        <a href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
+        <a class="text-white" href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
         <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
             <input hidden type="submit" value="Sign Out" />
         </form>

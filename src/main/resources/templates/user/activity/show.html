@@ -11,33 +11,40 @@
     <script type="text/javascript" th:src="@{/webjars/leaflet/1.7.1/leaflet.js}" ></script>
 </head>
 <body>
-<table>
-    <tr>
-        <td> Description : </td>
-        <td th:text="${activity.getDescription()}"></td>
+<div class="container-fluid bg-success text-white">
+    <div class="container mb-3">
+        <h1>#StopCovid</h1>
+    </div>
+</div>
+<div class="container mb-3">
+    <table>
+        <tr>
+            <td> Description : </td>
+            <td th:text="${activity.getDescription()}"></td>
+        </tr><tr>
+        <td> Starting date : </td>
+        <td th:text="${activity.getStart()}"></td>
     </tr><tr>
-    <td> Starting date : </td>
-    <td th:text="${activity.getStart()}"></td>
-</tr><tr>
-    <td> Ending date : </td>
-    <td th:text="${activity.getEnd()}"></td>
-</tr><tr>
-    <td> Location city : </td>
-    <td th:text="${activity.getLocation().getCity()}"></td>
-</tr><tr>
-    <td> Location name : </td>
-    <td th:text="${activity.getLocation().getName()}"></td>
-</tr><tr>
-    <td> Location address : </td>
-    <td th:text="${activity.getLocation().getAddress()}"></td>
-</tr><tr>
-    <td> Location latitude : </td>
-    <td id="latitude" th:text="${activity.getLocation().getLatitude()}"></td>
-</tr><tr>
-    <td> Location longitude : </td>
-    <td id="longitude" th:text="${activity.getLocation().getLongitude()}"></td>
-</tr>
-</table>
+        <td> Ending date : </td>
+        <td th:text="${activity.getEnd()}"></td>
+    </tr><tr>
+        <td> Location city : </td>
+        <td th:text="${activity.getLocation().getCity()}"></td>
+    </tr><tr>
+        <td> Location name : </td>
+        <td th:text="${activity.getLocation().getName()}"></td>
+    </tr><tr>
+        <td> Location address : </td>
+        <td th:text="${activity.getLocation().getAddress()}"></td>
+    </tr><tr>
+        <td> Location latitude : </td>
+        <td id="latitude" th:text="${activity.getLocation().getLatitude()}"></td>
+    </tr><tr>
+        <td> Location longitude : </td>
+        <td id="longitude" th:text="${activity.getLocation().getLongitude()}"></td>
+    </tr>
+    </table>
+</div>
 <div id="map" th:style="'height:60vh;'">
     <!-- MY LEAFLET MAP -->
 </div>

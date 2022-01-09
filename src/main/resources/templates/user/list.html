@@ -41,13 +41,13 @@
 </table>
 <div class="d-grid gap-2 col-6 mx-auto mb-3">
     <div class="container-fluid text-center btn btn-success mb-3">
-        <a href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
+        <a th:class="text-white" href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
         <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
             <input hidden type="submit" value="Sign Out" />
         </form>
     </div>
     <div class="container-fluid text-center btn btn-success mb-3">
-        <a href="javascript: document.friendListForm.submit()" class="dropdown-toggle">My Friend List</a>
+        <a th:class="text-white" href="javascript: document.friendListForm.submit()" class="dropdown-toggle">My Friend List</a>
         <form name="friendListForm" th:action="@{/user/friend/list}" method="get" th:hidden="true">
             <input hidden type="submit" value="Friend List" />
         </form>
