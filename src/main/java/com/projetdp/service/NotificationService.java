@@ -52,7 +52,7 @@ public class NotificationService {
                 befriended,
                 sender));
         notificationRepository.save(new Notification(
-                "You have accepted a friend request from " + befriended.getUsername(),
+                "You have sent a friend request to " + befriended.getUsername(),
                 new Date(),
                 false,
                 sender,
@@ -81,10 +81,21 @@ public class NotificationService {
         User sender = userService.getUserByUsername(UserService.getLoggedUsername());
         User refused = userService.getUserById(id);
         notificationRepository.save(new Notification(
-                sender.getUsername() + " refuse your friend request",
+                sender.getUsername() + " refused your friend request",
                 new Date(),
                 false,
                 refused,
+                sender));
+    }
+
+    public void addNotificationAccept(long id) {
+        User sender = userService.getUserByUsername(UserService.getLoggedUsername());
+        User accepted = userService.getUserById(id);
+        notificationRepository.save(new Notification(
+                sender.getUsername() + " accepted your friend request",
+                new Date(),
+                false,
+                accepted,
                 sender));
     }
 
@@ -127,5 +138,4 @@ public class NotificationService {
     public void deleteAllByReceiverAndSender(User user1, User user2) {
         notificationRepository.deleteAllByReceiverAndSender(user1, user2);
     }
-
 }

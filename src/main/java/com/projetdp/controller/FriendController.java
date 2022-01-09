@@ -63,7 +63,7 @@ public class FriendController {
     public ResponseEntity<?> addFriend(@RequestBody IdRequest request) throws NullPointerException{
         ResponseEntity<?> response;
         if(friendService.addFriend(request.getId())) {
-            notificationService.addNotificationBefriend(request.getId());
+            notificationService.addNotificationAccept(request.getId());
             response = ResponseEntity.ok(gson.toJson(HttpStatus.OK));
         } else response = ResponseEntity.badRequest().body(gson.toJson(HttpStatus.BAD_REQUEST));
         return response;

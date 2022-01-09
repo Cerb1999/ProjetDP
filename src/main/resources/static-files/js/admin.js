@@ -31,7 +31,7 @@ function ajax_remove(id, action) {
             window.location = urlSuccess;
         },
         error: function (e) {
-            var json = "<h4>Ajax Response</h4><pre>"
+            var json = "<h4>Ajax Response</h4><pre>" + 'error while removing object : '
                 + e.responseText + "</pre>";
             $('#feedback').html(json);
             console.log("ERROR : ", e);

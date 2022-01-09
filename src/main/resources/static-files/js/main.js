@@ -62,7 +62,7 @@ function ajax_registration() {
             window.location = '/login';
         },
         error: function (e) {
-            var json = "<h4>Ajax Response</h4><pre>"
+            var json = "<h4>Ajax Response</h4><pre>" + 'error while registering. May be a taken username : '
                 + e.responseText + "</pre>";
             $('#feedback').html(json);
         }
@@ -91,7 +91,7 @@ function ajax_edit() {
             window.location = "/user/profile/show";
         },
         error: function (e) {
-            var json = "<h4>Ajax Response</h4><pre>"
+            var json = "<h4>Ajax Response</h4><pre>" + 'error while editing user profile : '
                 + e.responseText + "</pre>";
             $('#feedback').html(json);
         }
@@ -132,7 +132,7 @@ function ajax_friend(id, action) {
             window.location = location;
         },
         error: function (e) {
-            var json = "<h4>Ajax Response</h4><pre>"
+            var json = "<h4>Ajax Response</h4><pre>" + 'error while doing a friend action : '
                 + e.responseText + "</pre>";
             $('#feedback').html(json);
         }
@@ -161,7 +161,7 @@ function ajax_add_location() {
                 $('#location-form').hide();
             },
             error: function (e) {
-                var json = "<h4>Ajax Response</h4><pre>"
+                var json = "<h4>Ajax Response</h4><pre>" + 'error while adding location : '
                     + e.responseText + "</pre>";
                 $('#feedback-location').html(json);
             }
@@ -188,7 +188,7 @@ function ajax_add_activity() {
             window.location = "/user/activity/list"
         },
         error: function (e) {
-            var json = "<h4>Ajax Response</h4><pre>"
+            var json = "<h4>Ajax Response</h4><pre>" + 'error while adding activity : '
                 + e.responseText + "</pre>";
             $('#feedback-activity').html(json);
         }
@@ -211,7 +211,7 @@ function ajax_read_notification(id) {
             window.location = "/user/notification/list";
         },
         error: function (e) {
-            var json = "<h4>Ajax Response</h4><pre>"
+            var json = "<h4>Ajax Response</h4><pre>" + 'error while reading notification : '
                 + e.responseText + "</pre>";
             $('#feedback').html(json);
         }

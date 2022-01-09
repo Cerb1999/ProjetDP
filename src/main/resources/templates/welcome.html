@@ -43,7 +43,7 @@
             <a th:href="@{/user/friend/list}">My friends list</a>
         </div>
         <div class="container text-center btn btn-outline-success mb-3">
-            <a th:class="text-black" href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
+            <a href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
             <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
                 <input hidden type="submit" value="Sign Out" />
             </form>
