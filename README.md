@@ -55,3 +55,6 @@ Run / Debut configuration -> Nouvelle configuration (Spring boot ou Tomcat)
 - on Update/ on Frame : Update classes and resources
 
 ```
+
+#### Diagramme de classe
+![diagramme de classe svg](./doc/UML_Diagram_SVG.svg)
