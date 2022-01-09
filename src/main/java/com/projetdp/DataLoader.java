@@ -31,11 +31,15 @@ public class DataLoader implements ApplicationRunner {
         userRepository.save(admin);
 
         Location location = new Location("fake location", "fake address", "fake city", 6.5, 47);
+        Location nancy = new Location("nancy fake location", "fake address nancy", "fake city nancy", 6.184417, 48.692054);
         locationRepository.save(location);
+        locationRepository.save(nancy);
 
         Activity activity = new Activity("fake description", new Date(), new Date(), location, user);
-        Activity activity2 = new Activity("fake description2", new Date(), new Date(), location, admin);
+        Activity activityAdmin1 = new Activity("fake description2", new Date(), new Date(), location, admin);
+        Activity activityAdmin2 = new Activity("fake description2", new Date(), new Date(), nancy, admin);
         activityRepository.save(activity);
-        activityRepository.save(activity2);
+        activityRepository.save(activityAdmin1);
+        activityRepository.save(activityAdmin2);
     }
 }

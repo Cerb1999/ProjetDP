@@ -70,4 +70,10 @@ public class UserService implements UserDetailsService {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return authentication.getName();
     }
+
+    public boolean removeUser(long id) {
+        boolean isSame = id == userRepository.findByUsername(UserService.getLoggedUsername()).getId();
+        if(!isSame) userRepository.delete(userRepository.findUserById(id));
+        return !isSame;
+    }
 }

@@ -27,12 +27,21 @@ public class LocationService {
                 request.getName(),
                 request.getAddress(),
                 request.getCity(),
-                request.getLatitude(),
-                request.getLongitude()
+                request.getLongitude(),
+                request.getLatitude()
                 ));
     }
 
     public Location getLocationByAddress(String address) {
         return locationRepository.getByAddress(address);
+    }
+
+    public List<Location> listAllLocations() {
+        return locationRepository.findAll();
+    }
+
+    public void removeLocation(long id) {
+        Location location = locationRepository.getById(id);
+        locationRepository.delete(location);
     }
 }

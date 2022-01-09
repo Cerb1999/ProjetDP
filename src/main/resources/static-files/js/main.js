@@ -217,4 +217,3 @@ function ajax_read_notification(id) {
         }
     });
 }
-

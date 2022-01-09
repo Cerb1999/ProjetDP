@@ -29,7 +29,7 @@ public class AdminController {
 
     @GetMapping("admin/activity/list")
     public ModelAndView listAllActivities() {
-        List<Activity> activities = adminService.listAllActivities();
+        List<Activity> activities = adminService.listAllActivitiesAdmin();
         Map<String, Object> objectMap = new HashMap<String, Object>();
         objectMap.put("activities", activities);
         return new ModelAndView("admin/activity/list").addAllObjects(objectMap);
@@ -45,7 +45,7 @@ public class AdminController {
 
     @GetMapping("admin/location/list")
     public ModelAndView listAllLocations() {
-        List<Location> locations = adminService.listAllLocations();
+        List<Location> locations = adminService.listAllLocationsAdmin();
         Map<String, Object> objectMap = new HashMap<String, Object>();
         objectMap.put("locations", locations);
         return new ModelAndView("admin/location/list").addAllObjects(objectMap);
@@ -54,20 +54,20 @@ public class AdminController {
 
     @PostMapping("admin/activity/remove")
     public ResponseEntity<?> removeActivity(@RequestBody IdRequest request) throws NullPointerException{
-        adminService.removeActivity(request.getId());
+        adminService.removeActivityAdmin(request.getId());
         return ResponseEntity.ok(gson.toJson(HttpStatus.OK));
     }
 
     @PostMapping("admin/location/remove")
     public ResponseEntity<?> removeLocation(@RequestBody IdRequest request) throws NullPointerException{
-        adminService.removeLocation(request.getId());
+        adminService.removeLocationAdmin(request.getId());
         return ResponseEntity.ok(gson.toJson(HttpStatus.OK));
     }
 
     @PostMapping("admin/user/remove")
     public ResponseEntity<?> removeUser(@RequestBody IdRequest request) throws NullPointerException{
         ResponseEntity<?> response;
-        if(adminService.removeUser(request.getId())) {
+        if(adminService.removeUserAdmin(request.getId())) {
             response = ResponseEntity.ok(gson.toJson(HttpStatus.OK));
         } else response = ResponseEntity.badRequest().body(gson.toJson(HttpStatus.BAD_REQUEST));
         return response;

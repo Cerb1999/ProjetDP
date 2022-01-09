@@ -31,6 +31,13 @@
         <td th:text="${activity.getLocation().getName()}"></td>
         <td> Location address : </td>
         <td th:text="${activity.getLocation().getAddress()}"></td>
+        <td>
+            <div class="form-group">
+                <a class="btn btn-primary" th:href="@{/user/activity/show(id=${activity.getId()})}">View</a>
+            </div>
+        </td>
+        <td th:class="'activity'+${activity.getId}">
+        </td>
     </tr>
 </table>
 <div class="d-grid gap-2 col-6 mx-auto">

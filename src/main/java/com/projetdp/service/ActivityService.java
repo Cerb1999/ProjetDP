@@ -16,6 +16,10 @@ public class ActivityService {
     private final LocationService locationService;
     private final UserService userService;
 
+    public Activity getActivity(long id) {
+        return activityRepository.getById(id);
+    }
+
     public void addActivity(ActivityRequest request) {
         Location location = locationService.getLocationByAddress(request.getLocation());
         User user =  userService.getUserByUsername(UserService.getLoggedUsername());
@@ -30,7 +34,7 @@ public class ActivityService {
         );
     }
 
-    public List<Activity> listActivities() {
+    public List<Activity> listActivitiesByLoggedUser() {
         User user =  userService.getUserByUsername(UserService.getLoggedUsername());
         return activityRepository.findAllByUser(user);
     }
@@ -45,5 +49,14 @@ public class ActivityService {
 
     public List<Activity> findAllByLocationAndUserNotAndStartBetween(Location location, User user, Date start, Date end) {
         return activityRepository.findAllByLocationAndUserNotAndStartBetween(location, user, start, end);
+    }
+
+    public List<Activity> listAllActivities() {
+        return activityRepository.findAllByOrderByStartDesc();
+    }
+
+    public void removeActivity(long id) {
+        Activity activity = activityRepository.getById(id);
+        activityRepository.delete(activity);
     }
 }

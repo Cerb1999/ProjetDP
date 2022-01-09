@@ -2,11 +2,8 @@ package com.projetdp.controller;
 
 
 import com.google.gson.Gson;
-import com.projetdp.model.Notification;
 import com.projetdp.model.User;
-import com.projetdp.repository.FriendRepository;
 import com.projetdp.request.IdRequest;
-import com.projetdp.request.RegistrationUserRequest;
 import com.projetdp.service.FriendService;
 import com.projetdp.service.NotificationService;
 import lombok.AllArgsConstructor;

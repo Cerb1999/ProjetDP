@@ -2,12 +2,11 @@ package com.projetdp.controller;
 
 import com.google.gson.Gson;
 import com.projetdp.model.Notification;
-import com.projetdp.request.NotificationRequest;
+import com.projetdp.request.IdRequest;
 import com.projetdp.service.NotificationService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,13 +32,13 @@ public class NotificationController {
     }
 
     @PostMapping(value="/user/notification/delete")
-    public ResponseEntity<?> deleteNotification(@RequestBody NotificationRequest request){
+    public ResponseEntity<?> deleteNotification(@RequestBody IdRequest request){
         notificationService.deleteNotification(request.getId());
         return ResponseEntity.ok(gson.toJson(HttpStatus.OK));
     }
 
     @PostMapping(value="/user/notification/read")
-    public ResponseEntity<?> readNotfication(@RequestBody NotificationRequest request){
+    public ResponseEntity<?> readNotification(@RequestBody IdRequest request){
         notificationService.readNotification(request.getId());
         return ResponseEntity.ok(gson.toJson(HttpStatus.OK));
     }

@@ -3,9 +3,6 @@ package com.projetdp.service;
 import com.projetdp.model.Activity;
 import com.projetdp.model.Location;
 import com.projetdp.model.User;
-import com.projetdp.repository.ActivityRepository;
-import com.projetdp.repository.LocationRepository;
-import com.projetdp.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,35 +11,31 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class AdminService {
-    private final ActivityRepository activityRepository;
-    private final LocationRepository locationRepository;
-    private final UserRepository userRepository;
+    private final ActivityService activityService;
+    private final LocationService locationService;
+    private final UserService userService;
 
-    public List<Activity> listAllActivities() {
-        return activityRepository.findAllByOrderByStartDesc();
+    public List<Activity> listAllActivitiesAdmin() {
+        return activityService.listAllActivities();
     }
 
-    public List<Location> listAllLocations() {
-        return locationRepository.findAll();
+    public List<Location> listAllLocationsAdmin() {
+        return locationService.listAllLocations();
     }
 
     public List<User> listAllUsers() {
-        return userRepository.findAll();
+        return userService.listAll();
     }
 
-    public void removeActivity(long id) {
-        Activity activity = activityRepository.getById(id);
-        activityRepository.delete(activity);
+    public void removeActivityAdmin(long id) {
+        activityService.removeActivity(id);
     }
 
-    public void removeLocation(long id) {
-        Location location = locationRepository.getById(id);
-        locationRepository.delete(location);
+    public void removeLocationAdmin(long id) {
+        locationService.removeLocation(id);
     }
 
-    public boolean removeUser(long id) {
-        boolean isSame = id == userRepository.findByUsername(UserService.getLoggedUsername()).getId();
-        if(!isSame) userRepository.delete(userRepository.findUserById(id));
-        return !isSame;
+    public boolean removeUserAdmin(long id) {
+        return userService.removeUser(id);
     }
 }
