@@ -1,5 +1,9 @@
 # ProjetDP
 
+## Dépendances
+  - Maven 3
+  - Java 1.8+
+
 ## Lancement
 
 Dans un terminal :
