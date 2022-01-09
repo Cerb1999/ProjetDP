@@ -10,6 +10,11 @@
     <script type="text/javascript" th:src="@{/webjars/jquery-ui/1.13.0/jquery-ui.min.js}"></script>
 </head>
 <body>
+<div class="container-fluid bg-success text-white">
+    <div class="container">
+        <h1>#StopCovid</h1>
+    </div>
+</div>
 <div id="feedback"></div>
 <table>
     <tr th:each="user : ${users}">
@@ -25,9 +30,9 @@
             <td th:text="${user.getRole()}"></td>
         <td>
             <div>
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="delete-user btn btn-primary" th:id="${user.getId()}">Delete</button>
+                        <button type="submit" class="delete-user btn btn-outline-danger" th:id="${user.getId()}">Delete</button>
                     </div>
                 </div>
             </div>

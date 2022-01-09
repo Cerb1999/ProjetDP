@@ -10,39 +10,55 @@
     <script type="text/javascript" th:src="@{/webjars/jquery-ui/1.13.0/jquery-ui.min.js}"></script>
 </head>
 <body>
-    <table>
-        <tr>
-            <td> Firstname : </td>
-            <td th:text="${user.getFirstname()}"></td>
-        </tr><tr>
-            <td> Lastname : </td>
-            <td th:text="${user.getLastname()}"></td>
-        </tr><tr>
-            <td> Username : </td>
-            <td th:text="${user.getUsername()}"></td>
-        </tr><tr>
-            <td> Birthdate : </td>
-            <td th:text="${user.getBirthdate()}"></td>
-        </tr><tr>
-            <td> Role : </td>
-            <td th:text="${user.getRole()}"></td>
-    </tr>
-    </table>
-    <div sec:authorize="hasAuthority('USER')">
-        <a th:href="@{/user/profile/edit}">Edit User Profile</a>
+<div class="container-fluid bg-success text-white">
+    <div class="container">
+        <h1>#StopCovid</h1>
     </div>
-    <a th:href="@{/user/notification/covid}">I HAVE CONTRACTED COVID !</a>
-    <div>
-        <a href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
-        <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
-            <input hidden type="submit" value="Sign Out" />
-        </form>
+</div>
+<div class="container text-center mb-3">
+    <h2>Profile</h2>
+</div>
+    <div class="row justify-content-center mb-3">
+        <div class="col-auto">
+            <table>
+                <tr>
+                    <td> Firstname : </td>
+                    <td th:text="${user.getFirstname()}"></td>
+                </tr><tr>
+                <td> Lastname : </td>
+                <td th:text="${user.getLastname()}"></td>
+            </tr><tr>
+                <td> Username : </td>
+                <td th:text="${user.getUsername()}"></td>
+            </tr><tr>
+                <td> Birthdate : </td>
+                <td th:text="${user.getBirthdate()}"></td>
+            </tr><tr>
+                <td> Role : </td>
+                <td th:text="${user.getRole()}"></td>
+            </tr>
+            </table>
+        </div>
     </div>
-    <div>
-        <a href="javascript: document.friendListForm.submit()" class="dropdown-toggle">My Friend List</a>
-        <form name="friendListForm" th:action="@{/user/friend/list}" method="get" th:hidden="true">
-            <input hidden type="submit" value="Friend List" />
-        </form>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <div sec:authorize="hasAuthority('USER')" class="container-fluid text-center btn btn-success mb-3">
+            <a th:href="@{/user/profile/edit}">Edit User Profile</a>
+        </div>
+        <div class="container-fluid text-center btn btn-danger mb-3">
+            <a th:href="@{/user/notification/covid}">I HAVE CONTRACTED COVID !</a>
+        </div>
+        <div class="container-fluid text-center btn btn-success mb-3">
+            <a href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
+            <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+                <input hidden type="submit" value="Sign Out" />
+            </form>
+        </div>
+        <div class="container-fluid text-center btn btn-success mb-3">
+            <a href="javascript: document.friendListForm.submit()" class="dropdown-toggle">My Friend List</a>
+            <form name="friendListForm" th:action="@{/user/friend/list}" method="get" th:hidden="true">
+                <input hidden type="submit" value="Friend List" />
+            </form>
+        </div>
     </div>
 </body>
 </html>

@@ -10,40 +10,51 @@
     <script type="text/javascript" th:src="@{/webjars/jquery-ui/1.13.0/jquery-ui.min.js}"></script>
 </head>
 <body>
-<h1>Edit User Profile form</h1>
+<div class="container-fluid bg-success text-white">
+    <div class="container">
+        <h1>#StopCovid</h1>
+    </div>
+</div>
+<div class="container text-center mb-3">
+    <h2>Edit User Profile form</h2>
+</div>
 <div id="feedback"></div>
     <form id="edit-user-form">
-        <table style="with: 50%">
-            <tr>
-                <td>First Name</td>
-                <td><input type="text" id="firstname" th:value="${user.getFirstname()}" required/></td>
-            </tr>
-            <tr>
-                <td>Last Name</td>
-                <td><input type="text" id="lastname" th:value="${user.getLastname()}" required/></td>
-            </tr>
-            <tr>
-                <td>Username</td>
-                <td><input type="text" id="username" th:value="${user.getUsername()}" required/></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><input type="password" id="password" required/></td>
-            </tr>
-            <tr>
-                <td>Birthdate</td>
-                <td><input type="date" id="birthdate" th:value="${user.getBirthdate()}" required/></td>
-            </tr>
-            <tr>
-                <td> Role : </td>
-                <td th:text="${user.getRole()}"></td>
-                <td><input type="hidden" id="role" value="2021-12-02" th:value="${user.getRole()}" required/></td>
-            </tr>
-        </table>
-        <div class="form-group">
+        <div class="row justify-content-center mb-3">
+            <div class="col-auto mb-3">
+                <table style="with: 50%">
+                    <tr>
+                        <td>First Name</td>
+                        <td><input type="text" id="firstname" th:value="${user.getFirstname()}" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td><input type="text" id="lastname" th:value="${user.getLastname()}" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Username</td>
+                        <td><input type="text" id="username" th:value="${user.getUsername()}" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" id="password" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Birthdate</td>
+                        <td><input type="date" id="birthdate" th:value="${user.getBirthdate()}" required/></td>
+                    </tr>
+                    <tr>
+                        <td> Role : </td>
+                        <td th:text="${user.getRole()}"></td>
+                        <td><input type="hidden" id="role" value="2021-12-02" th:value="${user.getRole()}" required/></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="container form-group text-center mb-3">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" id="btn-submit"
-                        class="btn btn-primary btn-lg">Submit
+                        class="btn btn-success btn-lg">Submit
                 </button>
             </div>
         </div>

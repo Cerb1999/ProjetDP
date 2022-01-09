@@ -10,6 +10,11 @@
     <script type="text/javascript" th:src="@{/webjars/jquery-ui/1.13.0/jquery-ui.min.js}"></script>
 </head>
 <body>
+<div class="container-fluid bg-success text-white">
+    <div class="container">
+        <h1>#StopCovid</h1>
+    </div>
+</div>
 <div id="feedback"></div>
 <table>
     <tr th:if="${notyetfriends.isEmpty() or notyetfriends==null}">
@@ -41,9 +46,12 @@
         </td>
     </tr>
 </table>
-<div>
-    <a th:href="@{/user/list}">User List</a>
+<div class="d-grid gap-2 col-6 mx-auto">
+    <div class="container text-center btn btn-success mb-3">
+        <a th:href="@{/user/list}">User List</a>
+    </div>
 </div>
+
 <script type="text/javascript" th:src="@{/js/main.js}"></script>
 </body>
 </html>
