@@ -1,5 +1,9 @@
 # ProjetDP
 
+## Dépendances
+  - Maven 3
+  - Java 1.8+
+
 ## Lancement
 
 Dans un terminal :
@@ -55,3 +59,9 @@ Run / Debut configuration -> Nouvelle configuration (Spring boot ou Tomcat)
 - on Update/ on Frame : Update classes and resources
 
 ```
+
+#### Diagramme de classe en SVG
+![diagramme de classe svg](./doc/UML_Diagram_SVG.svg)
+
+#### Diagramme de classe en PNG
+![diagramme de classe png](./doc/UML_Diagram_PNG.png)
