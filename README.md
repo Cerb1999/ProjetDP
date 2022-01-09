@@ -62,7 +62,9 @@ Run / Debut configuration -> Nouvelle configuration (Spring boot ou Tomcat)
 
 ### Informations complémentaires
 BDD 'dp' de base, créée si non existante
+
 Port 8085 de base (si spring boot)
+
 fichier de configuration spring : src/main/resources/application.properties
 
 #### Diagramme de classe en SVG
