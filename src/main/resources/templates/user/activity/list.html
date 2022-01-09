@@ -16,20 +16,25 @@
     </div>
 </div>
 <div id="feedback"></div>
-<table>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Starting date</th>
+            <th scope="col">Ending date</th>
+            <th scope="col">Location name</th>
+            <th scope="col">Location adress</th>
+        </tr>
+    </thead>
+    <tbody>
     <tr th:if="${activities.isEmpty() or activities==null}">
         <td>No activities</td>
     </tr>
     <tr th:each="activity : ${activities}">
-        <td> Description : </td>
         <td th:text="${activity.getDescription()}"></td>
-        <td> Starting date : </td>
         <td th:text="${activity.getStart()}"></td>
-        <td> Ending date : </td>
         <td th:text="${activity.getEnd()}"></td>
-        <td> Location name : </td>
         <td th:text="${activity.getLocation().getName()}"></td>
-        <td> Location address : </td>
         <td th:text="${activity.getLocation().getAddress()}"></td>
         <td>
             <div class="form-group mb-3">
@@ -39,13 +44,14 @@
         <td th:class="'activity'+${activity.getId}">
         </td>
     </tr>
+    </tbody>
 </table>
 <div class="d-grid gap-2 col-6 mx-auto mb-3">
     <div class="container-fluid text-center btn btn-success mb-3">
         <a class="text-white" th:href="@{/user/activity/add}">Add an activity</a>
     </div>
     <div class="container-fluid text-center btn btn-success mb-3">
-        <a class="text-white" href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
+        <a th:class="text-white" href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
         <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
             <input hidden type="submit" value="Sign Out" />
         </form>

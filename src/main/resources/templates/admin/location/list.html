@@ -16,18 +16,23 @@
     </div>
 </div>
 <div id="feedback"></div>
-<table>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Latitude</th>
+            <th scope="col">Longitude</th>
+        </tr>
+    </thead>
+    <tbody>
     <tr th:each="location : ${locations}">
-        <td> Name : </td>
-            <td th:text="${location.getName()}"></td>
-        <td> Address : </td>
-            <td th:text="${location.getAddress()}"></td>
-        <td> City : </td>
-            <td th:text="${location.getCity()}"></td>
-        <td> Latitude : </td>
-            <td th:text="${location.getLatitude()}"></td>
-        <td> Longitude : </td>
-            <td th:text="${location.getLongitude()}"></td>
+        <td th:text="${location.getName()}"></td>
+        <td th:text="${location.getAddress()}"></td>
+        <td th:text="${location.getCity()}"></td>
+        <td th:text="${location.getLatitude()}"></td>
+        <td th:text="${location.getLongitude()}"></td>
         <td>
             <div>
                 <div class="form-group mb-3">
@@ -38,10 +43,11 @@
             </div>
         </td>
     </tr>
+    </tbody>
 </table>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
     <div class="text-center btn btn-success mb-3">
-        <a href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
+        <a th:class="text-white" href="javascript: document.logoutForm.submit()" class="dropdown-toggle">Sign out</a>
         <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
             <input hidden type="submit" value="Sign Out" />
         </form>

@@ -16,31 +16,37 @@
     </div>
 </div>
 <div id="feedback"></div>
-<table>
-    <tr th:if="${activities.isEmpty() or activities==null}">
-        <td>No activities</td>
-    </tr>
-    <tr th:each="activity : ${activities}">
-        <td> Description : </td>
-        <td th:text="${activity.getDescription()}"></td>
-        <td> Starting date : </td>
-        <td th:text="${activity.getStart()}"></td>
-        <td> Ending date : </td>
-        <td th:text="${activity.getEnd()}"></td>
-        <td> Location name : </td>
-        <td th:text="${activity.getLocation().getName()}"></td>
-        <td> Location address : </td>
-        <td th:text="${activity.getLocation().getAddress()}"></td>
-        <td>
-            <div>
-                <div class="form-group mb-3">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="delete-activity btn btn-outline-danger" th:id="${activity.getId()}">Delete</button>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Starting date</th>
+            <th scope="col">Ending date</th>
+            <th scope="col">Location name</th>
+            <th scope="col">Location adress</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:if="${activities.isEmpty() or activities==null}">
+            <td>No activities</td>
+        </tr>
+        <tr th:each="activity : ${activities}">
+            <td th:text="${activity.getDescription()}"></td>
+            <td th:text="${activity.getStart()}"></td>
+            <td th:text="${activity.getEnd()}"></td>
+            <td th:text="${activity.getLocation().getName()}"></td>
+            <td th:text="${activity.getLocation().getAddress()}"></td>
+            <td>
+                <div>
+                    <div class="form-group mb-3">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="delete-activity btn btn-outline-danger" th:id="${activity.getId()}">Delete</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </td>
-    </tr>
+            </td>
+        </tr>
+    </tbody>
 </table>
 <script type="text/javascript" th:src="@{/js/admin.js}"></script>
 </body>
